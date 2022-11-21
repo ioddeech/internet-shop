@@ -4,7 +4,7 @@ public class Basket {
     private int limit;
 
     public Basket() {
-        items = "Список товаров: ";
+        items = "Список товаров в корзине: " + "\n";
         limit = 1000011001;
     }
     public Basket(int limit) {
@@ -30,7 +30,7 @@ public class Basket {
         }
         items = items + name + " - " +
                 count + " шт. - " + price + " руб." + "\n";
-        totalPrice = totalPrice + price * price;
+        totalPrice = totalPrice + price * count;
     }
 
     public boolean contains (String name) {
@@ -52,6 +52,7 @@ public class Basket {
             System.out.println("Корзина очищена.");
         } else {
             System.out.println(items);
+            printTotalPrice();
         }
     }
 
