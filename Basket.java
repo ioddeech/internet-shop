@@ -4,7 +4,7 @@ public class Basket {
     private int limit;
 
     public Basket() {
-        items = "Список товаров в корзине: " + "\n";
+        items = "Список товаров корзины: " + "\n";
         limit = 1000011001;
     }
     public Basket(int limit) {
