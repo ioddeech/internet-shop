@@ -54,17 +54,14 @@ public class Basket {
             System.out.println("Корзина очищена.");
         } else {
             System.out.println(items);
-            printTotal();
+            System.out.println("Общая стоимость корзины равна: " +
+                    getTotalPrice() + " руб.");
+            System.out.println("Общее количество товаров в корзине равно: " +
+                    getTotalCount() + " шт." + "\n");
         }
     }
 
     public int getTotalCount(){
         return totalCount;
-    }
-
-    public void printTotal() {
-        System.out.println("Общая стоимость корзины равна: " +
-                getTotalPrice() + " руб.");
-        System.out.println("Общее количество товаров в корзине равно: " + getTotalCount() + " шт." + "\n");
     }
 }
