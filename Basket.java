@@ -1,10 +1,11 @@
 public class Basket {
     public String items = "";
     public double totalPrice = 0;
+    public int totalCount = 0;
     private int limit;
 
     public Basket() {
-        items = "Список товаров корзины: " + "\n";
+        items = "Список товаров корзины: ";
         limit = 1000011001;
     }
     public Basket(int limit) {
@@ -28,9 +29,10 @@ public class Basket {
         if (totalPrice + count * price >= limit) {
             return;
         }
-        items = items + name + " - " +
-                count + " шт. - " + price + " руб." + "\n";
+        items = items + "\n" + name + " - " +
+                count + " шт. - " + price + " руб.";
         totalPrice = totalPrice + price * count;
+        totalCount = totalCount + count;
     }
 
     public boolean contains (String name) {
@@ -52,11 +54,17 @@ public class Basket {
             System.out.println("Корзина очищена.");
         } else {
             System.out.println(items);
-            printTotalPrice();
+            printTotal();
         }
     }
 
-    public void printTotalPrice() {
-        System.out.println("Общая стоимость корзины равна: " + totalPrice + " руб.");
+    public int getTotalCount(){
+        return totalCount;
+    }
+
+    public void printTotal() {
+        System.out.println("Общая стоимость корзины равна: " +
+                getTotalPrice() + " руб.");
+        System.out.println("Общее количество товаров в корзине равно: " + getTotalCount() + " шт." + "\n");
     }
 }
