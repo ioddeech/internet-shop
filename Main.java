@@ -16,5 +16,7 @@ public class Main {
         vasyaBasket.print("Корзина Василия: ");
         petyaBasket.print("Корзина Петра: ");
         olgaBasket.print("Корзина Ольги: ");
+
+
     }
 }
